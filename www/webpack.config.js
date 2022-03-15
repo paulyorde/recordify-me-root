@@ -11,8 +11,8 @@ module.exports = {
   devServer: {
     static: './public',
     hot: true,
-  }
-  // mode: "production",
+  },
+  mode: "production",
   // module: {
   //   rules: [
   //     {
