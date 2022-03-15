@@ -1,0 +1,23 @@
+{
+  "name": "recordify-me-root_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/index.js",
+    "build": "npm run build --prefix www",
+    "heroku-prebuild": "npm i --prefix www"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.17.3"
+  },
+  "engines": {
+    "node": "16.0.0",
+    "npm": "7.10.0"
+  }
+}

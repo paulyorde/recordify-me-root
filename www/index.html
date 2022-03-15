@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recordify.Me</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+
+  <!-- tone js -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.4.3/webcomponents-bundle.js" defer></script>
+	<link href="https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet"/>
+	<script src="../build/Tone.js" defer></script>
+	<script src="./js/tone-ui.js" defer></script>
+	<script src="./js/components.js" defer></script>
+</head>
+
+
+<body>
+  <style>
+		tone-play-toggle {
+			margin-bottom: 10px;
+		}
+	</style>
+<tone-example label="Reverb">
+  <div slot="explanation">
+  
+
+  <div id="content">
+    <tone-play-toggle></tone-play-toggle>
+  </div>
+</tone-example>
+
+<script type="text/javascript">
+  const reverb = new Tone.Reverb().toDestination();
+
+  const player = new Tone.Player({
+    url: "https://tonejs.github.io/audio/berklee/shaker_slow_1.mp3",
+    loop: true,
+    volume: 6,
+  }).connect(reverb);
+
+  ui({
+    parent: document.querySelector("#content"),
+    tone: reverb
+  });
+
+  // bind the interface
+  document.querySelector("tone-play-toggle").addEventListener("start", () => player.start());
+  document.querySelector("tone-play-toggle").addEventListener("stop", () => player.stop());
+
+</script>
+
+
+
+
+
+
+
+
+
+
+<!-- end tone js -->
+  <section class="main-controls">
+    <canvas class="visualizer" height="60px"></canvas>
+    <div id="buttons">
+      <button class="record">Record</button>
+      <button class="stop">Stop</button>
+    </div>
+  </section>
+
+  <section class="sound-clips"> </section>
+
+</div>
+
+<!-- <label for="toggle"></label> -->
+<input type="checkbox" id="toggle">
+
+<script src="./index.js" defer></script>
+  
+</body>
+</html>
+
