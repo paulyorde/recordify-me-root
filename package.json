@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/index.js",
-    "build": "npm run build --prefix www"
+    "build": "npm run build-prod --prefix www"
   },
   "keywords": [],
   "author": "",
